@@ -1,0 +1,89 @@
+@import '../../../variables.scss';
+
+.services {
+  text-align: center;
+  @include fontFranklin();
+  @include containersPadding();
+
+  h1 {
+    margin-left: -4px;
+    margin-bottom: 12px;
+    padding-left: 4px;
+    font-size: $fs-36;
+    overflow: hidden;
+    color: $purple;
+
+    @include mediaQuery($q-md) {
+      font-size: $fs-28;
+    }
+
+    @include mediaQuery($q-xs) {
+      font-size: $fs-24;
+    }
+  }
+
+  .list-of-services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 36px;
+  }
+  
+  .anchor {
+    width: fit-content;
+    margin: auto;
+    margin-top: 48px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      align-self: center;
+  
+      .work-anchor {
+        position: relative;
+        font-size: $fs-22;
+        color: $gray-text;
+        transition: 0.48s $bezier;
+    
+        @include mediaQuery($q-md) {
+          font-size: $fs-16;
+        }
+        
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: $black;
+          transition: 0.48s $bezier;
+        }
+    
+        &:hover {
+          color: $black;
+    
+          &::before {
+            width: 100%;
+          }
+    
+          ~ .anchor-icon {
+            transform: rotate(45deg);
+          }
+        }
+    
+        ~ .anchor-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          padding: 4px;
+          border-radius: 50%;
+          background-color: $pink;
+          transition: 0.24s $bezier 0.48s;
+        }
+      }
+    }
+  }
+}

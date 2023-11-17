@@ -1,0 +1,90 @@
+@import '../../variables.scss';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 96px;
+  @include blackGradient();
+  @include umbra24DP();
+
+  @include mediaQuery($q-lg) {
+    padding: 16px 48px;
+  }
+
+  @include mediaQuery($q-sm) {
+    padding: 16px 24px;
+  }
+
+  h1 {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: $fs-28;
+
+    @include mediaQuery($q-md) {
+      font-size: $fs-24;
+    }
+
+    @include mediaQuery($q-xs) {
+      font-size: $fs-22;
+    }
+  }
+
+  .burguer-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+    height: 64px;
+    width: 64px;
+
+    color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    @include darkVioletGradient();
+
+    @include beforeHover(124%, 100%, 0) {
+      @include violetGradient();
+    }
+
+    .icon {
+      z-index: 1;
+    }
+  }
+}
+
+.transition {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  transform-origin: bottom;
+  z-index: 999;
+  overflow: hidden;
+  @include blackGradient();
+  @include fontFranklin();
+
+  h1 {
+    margin-left: -4px;
+    margin-right: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: $fs-36;
+    overflow: hidden;
+    color: white;
+
+    @include mediaQuery($q-md) {
+      font-size: $fs-28;
+    }
+
+    @include mediaQuery($q-xs) {
+      font-size: $fs-24;
+    }
+  }
+}

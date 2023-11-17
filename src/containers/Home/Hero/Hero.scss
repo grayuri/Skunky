@@ -1,0 +1,119 @@
+@import '../../../variables.scss';
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  padding: 72px 96px;
+  width: 100%;
+  height: calc(100vh - 96px);
+  overflow: hidden;
+
+  @include mediaQuery($q-lg) {
+    padding: 48px;
+    gap: 48px;
+  }
+
+  @include mediaQuery($q-sm) {
+    flex-direction: column;
+    height: 100vh;
+    padding: 24px;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 60%;
+
+    @include mediaQuery($q-sm) {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: $fs-57;
+      color: $black;
+
+      @include mediaQuery($q-md) {
+        font-size: $fs-45;
+      }
+
+      @include mediaQuery($q-xs) {
+        font-size: $fs-36;
+      }
+    }
+
+    p {
+      font-size: $fs-28;
+      color: $gray-text;
+
+      @include mediaQuery($q-md) {
+        font-size: $fs-24;
+      }
+
+      @include mediaQuery($q-xs) {
+        font-size: $fs-22;
+      }
+    }
+
+    .learn-offers-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: fit-content;
+      color: white;
+      padding: 24px 36px;
+      border: none;
+      border-radius: 64px;
+      overflow: hidden;
+      font-size: $fs-28;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      @include darkVioletGradient();
+      @include umbra12DP();
+
+      @include mediaQuery($q-md) {
+        font-size: $fs-24;
+        text-wrap: nowrap;
+      }
+
+      @include mediaQuery($q-xs) {
+        font-size: $fs-22;
+      }
+
+      &:hover {
+        @include penumbra12DP();
+      }
+
+      @include beforeHover(120%, 150%, -25%) {
+        @include violetGradient();
+      }
+
+      span {
+        z-index: 1;
+      }
+    }
+  }
+
+  .right {
+    width: 40%;
+
+    @include mediaQuery($q-sm) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .black-vinyl {
+      img {
+        max-height: 100vh;
+        object-fit: contain;
+      }
+    }
+  }
+}

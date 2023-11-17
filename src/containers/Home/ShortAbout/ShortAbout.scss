@@ -1,0 +1,139 @@
+@import '../../../variables.scss';
+
+.short-about {
+  display: flex;
+  gap: 72px;
+  padding: 72px 96px;
+  @include blackGradient();
+  @include fontFranklin();
+  @include umbra16DP();
+
+  @include mediaQuery($q-lg) {
+    padding: 48px;
+  }
+  
+  @include mediaQuery($q-md) {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @include mediaQuery($q-sm) {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .left {
+    width: 30%;
+
+    @include mediaQuery($q-md) {
+      width: 100%;
+    }
+
+
+    .store-image {
+      display: flex;
+      justify-content: center;
+      border: 4px solid white;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1.32;
+      @include umbra16DP();
+
+      @include mediaQuery($q-md) {
+        aspect-ratio: 16/9;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 70%;
+    color: white;
+
+    @include mediaQuery($q-md) {
+      width: 100%;
+    }
+
+    h1 {
+      margin-left: -4px;
+      padding-left: 4px;
+      font-size: $fs-36;
+      overflow: hidden;
+
+      @include mediaQuery($q-md) {
+        font-size: $fs-28;
+      }
+
+      @include mediaQuery($q-xs) {
+        font-size: $fs-24;
+      }
+    }
+
+    p {
+      font-size: $fs-22;
+
+      @include mediaQuery($q-md) {
+        font-size: $fs-16;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+      width: fit-content;
+
+      .about-anchor {
+        position: relative;
+        font-size: $fs-22;
+        color: white;
+
+        @include mediaQuery($q-md) {
+          font-size: $fs-16;
+        }
+        
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: white;
+          transition: 0.48s $bezier;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+          }
+
+          ~ .anchor-icon {
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .anchor-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 4px;
+        border-radius: 50%;
+        background-color: $pink;
+        transition: 0.24s $bezier 0.48s;
+      }
+    }
+  }
+}

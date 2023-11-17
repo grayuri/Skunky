@@ -1,0 +1,59 @@
+@import '../../../variables.scss';
+
+.features {
+  color: white;
+  text-align: center;
+  @include containersPadding();
+  @include blackGradient();
+  @include umbra16DP();
+  @include fontFranklin();
+
+  h1 {
+    margin-left: -4px;
+    margin-bottom: 12px;
+    padding-left: 4px;
+    font-size: $fs-36;
+    overflow: hidden;
+
+    @include mediaQuery($q-md) {
+      font-size: $fs-28;
+    }
+
+    @include mediaQuery($q-xs) {
+      font-size: $fs-24;
+    }
+  }
+
+  .list-of-features {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+
+    .feature {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-direction: column;
+      padding: 12px;
+
+      width: calc(100% / 4);
+      max-width: 180px;
+      min-width: 120px;
+      height: 124px;
+      border: 1px solid $pink;
+      border-radius: 12px;
+      @include darkVioletGradient();
+      @include pinkUmbra24DP();
+
+      svg {
+        height: 48px;
+      }
+
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+.swiper {
+  width: 100%;
+
+  &-pagination-bullet-active {
+    background-color: #E070D3 !important; 
+  }
+
+  &-button-prev {
+    color: #E070D3 !important; 
+  }
+
+  &-button-next {
+    color: #E070D3 !important; 
+  }
+}

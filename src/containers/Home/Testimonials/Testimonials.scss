@@ -1,0 +1,28 @@
+@import '../../../variables.scss';
+
+.testimonials {
+  @include containersPadding();
+
+  h1 {
+    text-align: center;
+    margin-left: -4px;
+    margin-bottom: 12px;
+    padding-left: 4px;
+    font-size: $fs-36;
+    color: $purple;
+    overflow: hidden;
+    @include fontFranklin();
+
+    @include mediaQuery($q-md) {
+      font-size: $fs-28;
+    }
+
+    @include mediaQuery($q-xs) {
+      font-size: $fs-24;
+    }
+  }
+
+  .list-of-testimonials {
+    display: flex;
+  }
+}
